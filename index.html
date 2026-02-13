@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Dan ❤️</title>
+<style>
+body{
+margin:0;
+background: linear-gradient(to bottom, #000000, #2b0033);
+color:white;
+font-family: Arial, sans-serif;
+text-align:center;
+overflow:hidden;
+}
+.container{
+margin-top:18%;
+}
+h1{
+font-size:42px;
+animation: glow 2s infinite alternate;
+}
+@keyframes glow{
+from{ text-shadow:0 0 10px #ff66cc; }
+to{ text-shadow:0 0 30px #ff0066; }
+}
+p{
+font-size:18px;
+margin-top:20px;
+}
+button{
+padding:15px 30px;
+background:#ff4da6;
+border:none;
+font-size:18px;
+border-radius:30px;
+cursor:pointer;
+margin-top:25px;
+}
+button:hover{
+background:red;
+color:white;
+}
+.heart{
+position:absolute;
+color:#ff1a75;
+animation: float 6s linear infinite;
+}
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>Happy Valentine's Day My Love 💖</h1>
+<p>Dan, you are my safest place, my happiness, my forever.</p>
+<button onclick="showMessage()">Will You Be Mine Forever?</button>
+</div>
+
+<script>
+function showMessage(){
+alert("Forever with you Dan 😘❤️");
+}
+
+function createHeart(){
+const heart=document.createElement('div');
+heart.classList.add('heart');
+heart.innerHTML='❤️';
+heart.style.left=Math.random()*100+'vw';
+heart.style.fontSize=Math.random()*20+20+'px';
+heart.style.animationDuration=Math.random()*3+3+'s';
+document.body.appendChild(heart);
+setTimeout(()=>{heart.remove();},6000);
+}
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
