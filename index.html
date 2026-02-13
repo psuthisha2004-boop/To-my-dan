@@ -55,12 +55,23 @@ animation: float 6s linear infinite;
 <div class="container">
 <h1>Happy Valentine's Day My Love 💖</h1>
 <p>Dan, you are my safest place, my happiness, my forever.</p>
-<button onclick="showMessage()">Will You Be Mine Forever?</button>
+<button onclick="revealLove()">Tap Me</button>
 </div>
 
 <script>
-function showMessage(){
-alert("Forever with you Dan 😘❤️");
+function revealLove(){
+document.body.innerHTML = `
+<div style="height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:black;color:white;text-align:center;padding:20px;">
+<h1 style="font-size:40px;">Dan...</h1>
+<p style="font-size:20px;margin-top:20px;max-width:600px;">
+From the day you walked into my life,
+everything felt calmer... safer... warmer.
+I don't need the world,
+I just need you.
+</p>
+<h2 style="margin-top:30px;color:#ff4da6;">You're stuck with me. Forever. ❤️</h2>
+</div>
+`;
 }
 
 function createHeart(){
