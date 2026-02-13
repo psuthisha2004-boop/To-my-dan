@@ -14,7 +14,7 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* PASSWORD */
+/* PASSWORD SCREEN */
 #passwordScreen{
 height:100vh;
 display:flex;
@@ -79,11 +79,14 @@ display:none;
 /* LETTER */
 .letter{
 max-width:900px;
-margin:50px auto;
+margin:60px auto;
 line-height:2.1;
 font-size:20px;
 text-align:left;
 padding:20px;
+opacity:0;
+transform:translateY(60px);
+transition:all 1.8s ease;
 }
 
 /* FLOAT HEART */
@@ -112,7 +115,7 @@ background:black;
 color:#ff99cc;
 justify-content:center;
 align-items:center;
-font-size:30px;
+font-size:32px;
 text-align:center;
 flex-direction:column;
 z-index:999;
@@ -146,7 +149,7 @@ z-index:999;
 <img src="Snapchat-1573426389.jpg">
 </div>
 
-<div class="letter">
+<div class="letter" id="letter">
 
 <p><strong>To My Dan,</strong></p>
 
@@ -162,8 +165,8 @@ And attachment turned into something I cannot imagine living without.
 You didn’t enter my life loudly.
 There was no dramatic moment.
 It was soft.
-Natural.
 Gentle.
+Natural.
 And maybe that’s what makes it feel so real.
 </p>
 
@@ -187,7 +190,7 @@ Ooty wasn’t just a trip.
 It was cold air and warm laughter.
 It was walking beside you without needing constant words.
 It was silence that didn’t feel empty.
-Those moments didn’t just stay in photos —
+Those memories didn’t just stay in photos —
 they settled permanently inside my heart.
 </p>
 
@@ -242,13 +245,14 @@ Always yours,
 </div>
 
 <button onclick="openSong()">Play Our Song 🎵</button>
-<button onclick="showFinal()">Surprise 💖</button>
+<button onclick="showSurprise()">Surprise 💖</button>
 
 </div>
 
 <div id="finalScreen">
 <p>Forever Starts With Us 💍❤️</p>
-<p>I Love You Dan 😘</p>
+<p style="margin-top:20px;">I Love You Dan 😘</p>
+<p style="margin-top:10px;">No matter what… I choose you.</p>
 <button onclick="closeFinal()">Close</button>
 </div>
 
@@ -265,6 +269,7 @@ alert("Wrong password 😉");
 }
 }
 
+/* LOVE COUNTER */
 function startCounter(){
 let startDate=new Date("2023-05-11");
 let today=new Date();
@@ -274,6 +279,7 @@ document.getElementById("loveCounter").innerText=
 "Together for "+days+" days ❤️";
 }
 
+/* SLIDESHOW */
 let slideIndex=0;
 function startSlideshow(){
 let slides=document.querySelectorAll("#slideshow img");
@@ -284,12 +290,27 @@ slides[slideIndex-1].style.display="block";
 setTimeout(startSlideshow,3000);
 }
 
+/* SCROLL ANIMATION */
+window.addEventListener("scroll",function(){
+let letter=document.getElementById("letter");
+let pos=letter.getBoundingClientRect().top;
+if(pos < window.innerHeight-100){
+letter.style.opacity="1";
+letter.style.transform="translateY(0)";
+}
+});
+
+/* SPOTIFY */
 function openSong(){
 window.open("https://open.spotify.com/track/3ywjIbXWgG5Vjom6zhA2aP?si=pRDtn-dGQk-fgypQwk2qTQ","_blank");
 }
 
-function showFinal(){
+/* SURPRISE */
+function showSurprise(){
+let answer=confirm("Will you stay with me forever? 💍❤️");
+if(answer){
 document.getElementById("finalScreen").style.display="flex";
+}
 }
 
 function closeFinal(){
@@ -309,8 +330,8 @@ setTimeout(()=>heart.remove(),7000);
 setInterval(createFloatHeart,800);
 
 /* CLICK HEART BURST */
-document.addEventListener("click", function(e){
-for(let i=0;i<10;i++){
+document.addEventListener("click",function(e){
+for(let i=0;i<8;i++){
 let heart=document.createElement("div");
 heart.innerHTML="❤️";
 heart.style.position="fixed";
