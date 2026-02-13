@@ -14,7 +14,7 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* PASSWORD SCREEN */
+/* PASSWORD */
 #passwordScreen{
 height:100vh;
 display:flex;
@@ -45,78 +45,95 @@ button:hover{
 background:#ff1a8c;
 }
 
-/* MAIN CONTENT */
 #mainContent{
 display:none;
 padding:20px;
 }
 
 /* TITLE */
-.loveTitle{
-font-size:34px;
-margin-top:20px;
+.title{
+font-size:36px;
 color:#ff99cc;
+margin-top:20px;
+}
+
+/* COUNTER */
+.counter{
+margin-top:10px;
+font-size:18px;
+color:#ffcce6;
 }
 
 /* SLIDESHOW */
 .slideshow{
-position:relative;
-max-width:320px;
-margin:25px auto;
-height:420px;
+max-width:350px;
+margin:30px auto;
 }
 
 .slideshow img{
 width:100%;
-height:100%;
-object-fit:cover;
 border-radius:20px;
-position:absolute;
-opacity:0;
-transition:opacity 1.5s ease-in-out;
+display:none;
 }
 
 /* LETTER */
 .letter{
-max-width:750px;
-margin:40px auto;
-line-height:1.9;
-font-size:18px;
+max-width:900px;
+margin:50px auto;
+line-height:2.1;
+font-size:20px;
 text-align:left;
-padding:15px;
+padding:20px;
 }
 
-/* HEARTS */
-.heart{
+/* FLOAT HEART */
+.floatHeart{
 position:fixed;
 bottom:-20px;
 color:#ff4da6;
-animation:float 7s linear infinite;
+animation:floatUp 7s linear infinite;
 z-index:0;
 }
 
-@keyframes float{
+@keyframes floatUp{
 0%{transform:translateY(0);}
 100%{transform:translateY(-110vh);}
+}
+
+/* FINAL SCREEN */
+#finalScreen{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+color:#ff99cc;
+justify-content:center;
+align-items:center;
+font-size:30px;
+text-align:center;
+flex-direction:column;
+z-index:999;
 }
 </style>
 </head>
 
 <body>
 
-<!-- PASSWORD -->
 <div id="passwordScreen">
 <h2>Only Dan Can Enter ❤️</h2>
 <input type="password" id="pass" placeholder="Password">
 <button onclick="checkPass()">Enter</button>
 </div>
 
-<!-- MAIN CONTENT -->
 <div id="mainContent">
 
-<h1 class="loveTitle">Suthisha Loves Dan ❤️</h1>
+<h1 class="title">Suthisha Loves Dan ❤️</h1>
+<div class="counter" id="loveCounter"></div>
 
-<div class="slideshow">
+<div class="slideshow" id="slideshow">
 <img src="20250804_112227.jpg">
 <img src="IMG-20250911-WA0045.jpg">
 <img src="IMG-20260101-WA0019.jpg">
@@ -134,56 +151,59 @@ z-index:0;
 <p><strong>To My Dan,</strong></p>
 
 <p>
-Sometimes I sit quietly and think about how everything between us started.
-How two people just met… and slowly,
-without noise or drama,
-you became my entire world.
+From May 11, the day everything truly began,
+I never imagined how deeply you would become part of my life.
+What started as simple conversations slowly became comfort.
+Comfort slowly became attachment.
+And attachment turned into something I cannot imagine living without.
 </p>
 
 <p>
-You didn’t enter my life like a storm.
-You became part of it gently.
-Softly.
-Naturally.
-And before I even realised it,
-you were the person I couldn’t imagine my days without.
+You didn’t enter my life loudly.
+There was no dramatic moment.
+It was soft.
+Natural.
+Gentle.
+And maybe that’s what makes it feel so real.
 </p>
 
 <p>
 You are the first person I want to tell everything to.
-The one I look for in a room.
+The one I look for automatically.
+The one whose presence makes everything feel calmer.
 The one who makes even ordinary days feel special.
-The one whose presence makes my heart calm down.
 </p>
 
 <p>
-With you, love doesn’t feel complicated.
+With you, love doesn’t feel confusing.
 It feels safe.
 It feels steady.
 It feels like home.
+And that feeling means everything to me.
 </p>
 
 <p>
-Ooty wasn’t just a trip for me.
-It was laughter in cold air.
-It was walking side by side without needing constant words.
-It was silence that felt full instead of empty.
-Those moments weren’t just memories —
-they became pieces of my heart.
+Ooty wasn’t just a trip.
+It was cold air and warm laughter.
+It was walking beside you without needing constant words.
+It was silence that didn’t feel empty.
+Those moments didn’t just stay in photos —
+they settled permanently inside my heart.
 </p>
 
 <p>
 I don’t love you temporarily.
-I don’t love you for a season.
 I love you in the everyday way.
-The “stay even when it’s hard” way.
-The “grow together” way.
-The “build something real” way.
+The stay-even-when-it’s-hard way.
+The grow-together way.
+The build-something-real way.
+The forever way.
 </p>
 
 <p>
 I want you in the happy days.
 In the boring days.
+In the tired days.
 In the long talks.
 In the quiet evenings.
 In the difficult conversations.
@@ -191,26 +211,27 @@ In every version of life.
 </p>
 
 <p>
-If life ever asks me again who I choose —
+If life ever asks me again who I would choose —
 I will still choose you.
 Not because I have to.
 But because I genuinely want to.
 </p>
 
 <p>
-You are not just someone I love.
 You are my peace.
 My comfort.
 My person.
+My always.
 </p>
 
 <p>
 And if forever exists,
-I want it with you.
-Calm.
+I want it calm.
 Strong.
 Steady.
-Us.
+With you.
+No fear.
+Just us.
 </p>
 
 <p>
@@ -221,29 +242,45 @@ Always yours,
 </div>
 
 <button onclick="openSong()">Play Our Song 🎵</button>
+<button onclick="showFinal()">Surprise 💖</button>
 
+</div>
+
+<div id="finalScreen">
+<p>Forever Starts With Us 💍❤️</p>
+<p>I Love You Dan 😘</p>
+<button onclick="closeFinal()">Close</button>
 </div>
 
 <script>
 
 function checkPass(){
-var entered=document.getElementById("pass").value.trim();
-if(entered==="kuttaa"){
+if(document.getElementById("pass").value.trim()==="kuttaa"){
 document.getElementById("passwordScreen").style.display="none";
 document.getElementById("mainContent").style.display="block";
 startSlideshow();
+startCounter();
 }else{
 alert("Wrong password 😉");
 }
 }
 
-var slides=document.querySelectorAll(".slideshow img");
-var index=0;
+function startCounter(){
+let startDate=new Date("2023-05-11");
+let today=new Date();
+let diff=today-startDate;
+let days=Math.floor(diff/(1000*60*60*24));
+document.getElementById("loveCounter").innerText=
+"Together for "+days+" days ❤️";
+}
 
+let slideIndex=0;
 function startSlideshow(){
-slides.forEach(img=>img.style.opacity=0);
-slides[index].style.opacity=1;
-index=(index+1)%slides.length;
+let slides=document.querySelectorAll("#slideshow img");
+slides.forEach(img=>img.style.display="none");
+slideIndex++;
+if(slideIndex>slides.length){slideIndex=1;}
+slides[slideIndex-1].style.display="block";
 setTimeout(startSlideshow,3000);
 }
 
@@ -251,18 +288,47 @@ function openSong(){
 window.open("https://open.spotify.com/track/3ywjIbXWgG5Vjom6zhA2aP?si=pRDtn-dGQk-fgypQwk2qTQ","_blank");
 }
 
-/* HEART FLOAT */
-function createHearts(){
+function showFinal(){
+document.getElementById("finalScreen").style.display="flex";
+}
+
+function closeFinal(){
+document.getElementById("finalScreen").style.display="none";
+}
+
+/* FLOAT HEARTS */
+function createFloatHeart(){
 let heart=document.createElement("div");
-heart.classList.add("heart");
+heart.classList.add("floatHeart");
 heart.innerHTML="❤️";
 heart.style.left=Math.random()*100+"vw";
 heart.style.fontSize=(Math.random()*20+15)+"px";
 document.body.appendChild(heart);
 setTimeout(()=>heart.remove(),7000);
 }
+setInterval(createFloatHeart,800);
 
-setInterval(createHearts,600);
+/* CLICK HEART BURST */
+document.addEventListener("click", function(e){
+for(let i=0;i<10;i++){
+let heart=document.createElement("div");
+heart.innerHTML="❤️";
+heart.style.position="fixed";
+heart.style.left=e.clientX+"px";
+heart.style.top=e.clientY+"px";
+heart.style.pointerEvents="none";
+heart.style.transition="all 1s ease-out";
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.style.left=(e.clientX+(Math.random()*200-100))+"px";
+heart.style.top=(e.clientY+(Math.random()*200-100))+"px";
+heart.style.opacity="0";
+},10);
+
+setTimeout(()=>heart.remove(),1000);
+}
+});
 
 </script>
 
