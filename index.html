@@ -1,41 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>For My Dan ❤️</title>
+<title>Suthisha ❤️ Dan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background:linear-gradient(to bottom,#000000,#2b0033);
+font-family:'Segoe UI',sans-serif;
+overflow:hidden;
 color:white;
 text-align:center;
-overflow-x:hidden;
 }
 
-.container{
-margin-top:15%;
+/* Fullscreen slideshow */
+.slideshow{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-2;
 }
 
-button{
-padding:12px 25px;
-background:#ff4da6;
-border:none;
-border-radius:25px;
-color:white;
-font-size:18px;
-cursor:pointer;
+.slideshow img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:opacity 2s ease-in-out;
 }
 
-button:hover{
-background:#ff1a75;
+/* Dark overlay */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+z-index:-1;
 }
 
-/* Love line animation */
+/* Content */
+.content{
+position:relative;
+top:50%;
+transform:translateY(-50%);
+padding:20px;
+max-width:800px;
+margin:auto;
+}
+
+/* Title animation */
 .loveLine{
-font-size:38px;
+font-size:42px;
 font-weight:bold;
-margin-top:30px;
 background: linear-gradient(90deg,#ff4da6,#ff99cc,#ff1a75,#ff4da6);
 background-size:300% auto;
 color:transparent;
@@ -50,163 +71,490 @@ animation:shine 4s linear infinite, heartbeat 1.5s infinite;
 
 @keyframes heartbeat{
 0%{transform:scale(1);}
-25%{transform:scale(1.1);}
+25%{transform:scale(1.05);}
 50%{transform:scale(1);}
-75%{transform:scale(1.1);}
+75%{transform:scale(1.05);}
 100%{transform:scale(1);}
-}
-
-/* Slideshow */
-.slideshow{
-width:80%;
-max-width:350px;
-margin:30px auto;
-border-radius:20px;
-box-shadow:0 0 20px #ff4da6;
-}
-
-.slideshow img{
-width:100%;
-border-radius:20px;
 }
 
 /* Letter */
 .letter{
-max-width:600px;
-margin:30px auto;
+margin-top:30px;
 font-size:18px;
-line-height:1.6;
-padding:20px;
+line-height:1.9;
+opacity:0;
+animation:fadeIn 4s forwards;
+animation-delay:2s;
+text-align:left;
 }
 
-/* Floating hearts */
-.heart{
+@keyframes fadeIn{
+to{opacity:1;}
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:25px;
+background:#ff4da6;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:25px;
+}
+
+button:hover{
+background:#ff1a75;
+}
+
+/* Password screen */
+.passwordScreen{
 position:fixed;
-bottom:-10px;
-font-size:20px;
-color:#ff4da6;
-animation:float 6s linear infinite;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:10;
 }
 
-@keyframes float{
-0%{transform:translateY(0);}
-100%{transform:translateY(-100vh);}
+input{
+padding:12px;
+border-radius:20px;
+border:none;
+margin-top:10px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-<h1>Happy Valentine's Day My Love 💖</h1>
-<p>Only you can open this 💌</p>
-<button onclick="checkPassword()">Enter Password</button>
+<div class="passwordScreen" id="passwordScreen">
+<h2>Only Dan Can Enter ❤️</h2>
+<input type="password" id="pass" placeholder="Enter password">
+<button onclick="checkPass()">Unlock</button>
+</div>
+
+<div class="slideshow">
+<img src="20250804_112227.jpg">
+<img src="IMG-20250911-WA0045.jpg">
+<img src="IMG-20260101-WA0019.jpg">
+<img src="IMG_20250927_190107419.jpg">
+<img src="IMG_20251012_011411_604.jpg">
+<img src="IMG_20251012_011411_818.jpg">
+<img src="IMG_20251107_215529630.jpg">
+<img src="IMG_20251225_140426029.jpg">
+<img src="Snapchat-114849739.jpg">
+<img src="Snapchat-1573426389.jpg">
+</div>
+
+<div class="overlay"></div>
+
+<div class="content" id="mainContent" style="display:none;">
+<h1 class="loveLine">Suthisha ❤️ Loves ❤️ Dan</h1>
+
+<div class="letter">
+
+<p><strong>To My Dan,</strong></p>
+
+<p>
+Sometimes I sit and think about how all of this started.
+How two people just met.
+And somehow, slowly,
+you became the most important person in my world.
+</p>
+
+<p>
+You didn’t enter my life loudly.
+You became part of it quietly.
+And before I even realised,
+I couldn’t imagine my days without you.
+</p>
+
+<p>
+You are the first person I want to tell everything to.
+The one I think about when something funny happens.
+The one I look for in a room.
+The one who makes even ordinary days feel special.
+</p>
+
+<p>
+With you, love doesn’t feel dramatic.
+It feels safe.
+It feels steady.
+It feels like home.
+</p>
+
+<p>
+Ooty wasn’t just a trip.
+It was us walking in cold air,
+laughing over nothing,
+sharing silence without it feeling empty.
+Those moments weren’t just memories —
+they became pieces of my heart.
+</p>
+
+<p>
+I don’t love you in a temporary way.
+I don’t love you for a season.
+I love you in the everyday way.
+The “let’s build something real” way.
+The “stay even when it’s hard” way.
+</p>
+
+<p>
+You make me feel chosen.
+You make me feel valued.
+You make me feel understood in ways I didn’t know I needed.
+</p>
+
+<p>
+I don’t just want you in the happy moments.
+I want you in the boring days.
+In the long talks.
+In the quiet evenings.
+In the difficult conversations.
+In everything.
+</p>
+
+<p>
+And if life ever asks me again,
+who I would choose —
+I will still choose you.
+</p>
+
+<p>
+Not because I have to.
+But because I genuinely want to.
+</p>
+
+<p>
+You are not just someone I love.
+You are my peace.
+My comfort.
+My person.
+</p>
+
+<p>
+And if forever is real,
+I want it with you.
+</p>
+
+<p><strong>Always yours,<br>Suthisha ❤️</strong></p>
+
+</div>
+
+<button onclick="openSong()">Play Our Song 🎵</button>
+
 </div>
 
 <script>
 
-function checkPassword(){
-let pass = prompt("Enter the password 💖");
-if(pass === "kuttaaa"){
-showLove();
-}else{
-alert("Wrong password 😏 Try again!");
-}
-}
-
-function showLove(){
-document.body.innerHTML = `
-
-<h1 class="loveLine">Suthisha ❤️ Loves ❤️ Dan</h1>
-
-<div class="slideshow">
-<img id="slide" src="20250804_112227.jpg">
-</div>
-
-<div class="letter">
-<h2>To My Dan 💌</h2>
-
-<p>
-From the moment you walked into my life, everything changed.
-You became my calm in chaos, my comfort in silence,
-my happiness without reason.
-</p>
-
-<p>
-Ooty la namma moments… those laughs,
-those small fights,
-those random talks,
-everything lives inside my heart permanently.
-Even if we don’t have photos for every memory,
-I remember every second.
-</p>
-
-<p>
-I don’t just love you.
-I choose you.
-Every day.
-Again and again.
-In every lifetime.
-</p>
-
-<p>
-You are mine.
-And I’m yours.
-Always. Forever. 💍
-</p>
-
-</div>
-
-<p style="margin-top:20px;">
-Our song 🎵  
-<a href="https://open.spotify.com/" target="_blank" style="color:#ff4da6;">
-Velicha Poove 💖
-</a>
-</p>
-`;
-
+function checkPass(){
+if(document.getElementById("pass").value==="kuttaaa"){
+document.getElementById("passwordScreen").style.display="none";
+document.getElementById("mainContent").style.display="block";
 startSlideshow();
-createHearts();
+}else{
+alert("Wrong password 😏");
+}
 }
 
-/* Slideshow images */
-let images = [
-"20250804_112227.jpg",
-"IMG-20250911-WA0045.jpg",
-"IMG-20260101-WA0019.jpg",
-"IMG_20250927_190107419.jpg",
-"IMG_20251012_011411_604.jpg",
-"IMG_20251012_011411_818.jpg",
-"IMG_20251107_215529630.jpg",
-"IMG_20251225_140426029.jpg",
-"Snapshot-114849739.jpg",
-"Snapshot-1573426389.jpg"
-];
-
+let slides=document.querySelectorAll(".slideshow img");
 let index=0;
 
 function startSlideshow(){
-setInterval(()=>{
-index++;
-if(index>=images.length) index=0;
-document.getElementById("slide").src=images[index];
-},2000);
+slides.forEach(img=>img.style.opacity=0);
+slides[index].style.opacity=1;
+index=(index+1)%slides.length;
+setTimeout(startSlideshow,4000);
 }
 
-/* Floating hearts */
-function createHearts(){
-setInterval(()=>{
-let heart=document.createElement("div");
-heart.classList.add("heart");
-heart.innerHTML="❤️";
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(Math.random()*20+15)+"px";
-heart.style.animationDuration=(Math.random()*3+3)+"s";
-document.body.appendChild(heart);
-setTimeout(()=>{heart.remove();},6000);
-},300);
+function openSong(){
+window.open("https://open.spotify.com/track/3ywjIbXWgG5Vjom6zhA2aP?si=pRDtn-dGQk-fgypQwk2qTQ","_blank");
+}
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+<title>Suthisha ❤️ Dan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+overflow:hidden;
+color:white;
+text-align:center;
 }
 
+/* Fullscreen slideshow */
+.slideshow{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-2;
+}
+
+.slideshow img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:opacity 2s ease-in-out;
+}
+
+/* Dark overlay */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+z-index:-1;
+}
+
+/* Content */
+.content{
+position:relative;
+top:50%;
+transform:translateY(-50%);
+padding:20px;
+max-width:800px;
+margin:auto;
+}
+
+/* Title animation */
+.loveLine{
+font-size:42px;
+font-weight:bold;
+background: linear-gradient(90deg,#ff4da6,#ff99cc,#ff1a75,#ff4da6);
+background-size:300% auto;
+color:transparent;
+-webkit-background-clip:text;
+animation:shine 4s linear infinite, heartbeat 1.5s infinite;
+}
+
+@keyframes shine{
+0%{background-position:0% center;}
+100%{background-position:300% center;}
+}
+
+@keyframes heartbeat{
+0%{transform:scale(1);}
+25%{transform:scale(1.05);}
+50%{transform:scale(1);}
+75%{transform:scale(1.05);}
+100%{transform:scale(1);}
+}
+
+/* Letter */
+.letter{
+margin-top:30px;
+font-size:18px;
+line-height:1.9;
+opacity:0;
+animation:fadeIn 4s forwards;
+animation-delay:2s;
+text-align:left;
+}
+
+@keyframes fadeIn{
+to{opacity:1;}
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:25px;
+background:#ff4da6;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:25px;
+}
+
+button:hover{
+background:#ff1a75;
+}
+
+/* Password screen */
+.passwordScreen{
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:10;
+}
+
+input{
+padding:12px;
+border-radius:20px;
+border:none;
+margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="passwordScreen" id="passwordScreen">
+<h2>Only Dan Can Enter ❤️</h2>
+<input type="password" id="pass" placeholder="Enter password">
+<button onclick="checkPass()">Unlock</button>
+</div>
+
+<div class="slideshow">
+<img src="20250804_112227.jpg">
+<img src="IMG-20250911-WA0045.jpg">
+<img src="IMG-20260101-WA0019.jpg">
+<img src="IMG_20250927_190107419.jpg">
+<img src="IMG_20251012_011411_604.jpg">
+<img src="IMG_20251012_011411_818.jpg">
+<img src="IMG_20251107_215529630.jpg">
+<img src="IMG_20251225_140426029.jpg">
+<img src="Snapchat-114849739.jpg">
+<img src="Snapchat-1573426389.jpg">
+</div>
+
+<div class="overlay"></div>
+
+<div class="content" id="mainContent" style="display:none;">
+<h1 class="loveLine">Suthisha ❤️ Loves ❤️ Dan</h1>
+
+<div class="letter">
+
+<p><strong>To My Dan,</strong></p>
+
+<p>
+Sometimes I sit and think about how all of this started.
+How two people just met.
+And somehow, slowly,
+you became the most important person in my world.
+</p>
+
+<p>
+You didn’t enter my life loudly.
+You became part of it quietly.
+And before I even realised,
+I couldn’t imagine my days without you.
+</p>
+
+<p>
+You are the first person I want to tell everything to.
+The one I think about when something funny happens.
+The one I look for in a room.
+The one who makes even ordinary days feel special.
+</p>
+
+<p>
+With you, love doesn’t feel dramatic.
+It feels safe.
+It feels steady.
+It feels like home.
+</p>
+
+<p>
+Ooty wasn’t just a trip.
+It was us walking in cold air,
+laughing over nothing,
+sharing silence without it feeling empty.
+Those moments weren’t just memories —
+they became pieces of my heart.
+</p>
+
+<p>
+I don’t love you in a temporary way.
+I don’t love you for a season.
+I love you in the everyday way.
+The “let’s build something real” way.
+The “stay even when it’s hard” way.
+</p>
+
+<p>
+You make me feel chosen.
+You make me feel valued.
+You make me feel understood in ways I didn’t know I needed.
+</p>
+
+<p>
+I don’t just want you in the happy moments.
+I want you in the boring days.
+In the long talks.
+In the quiet evenings.
+In the difficult conversations.
+In everything.
+</p>
+
+<p>
+And if life ever asks me again,
+who I would choose —
+I will still choose you.
+</p>
+
+<p>
+Not because I have to.
+But because I genuinely want to.
+</p>
+
+<p>
+You are not just someone I love.
+You are my peace.
+My comfort.
+My person.
+</p>
+
+<p>
+And if forever is real,
+I want it with you.
+</p>
+
+<p><strong>Always yours,<br>Suthisha ❤️</strong></p>
+
+</div>
+
+<button onclick="openSong()">Play Our Song 🎵</button>
+
+</div>
+
+<script>
+
+function checkPass(){
+if(document.getElementById("pass").value==="kuttaaa"){
+document.getElementById("passwordScreen").style.display="none";
+document.getElementById("mainContent").style.display="block";
+startSlideshow();
+}else{
+alert("Wrong password 😏");
+}
+}
+
+let slides=document.querySelectorAll(".slideshow img");
+let index=0;
+
+function startSlideshow(){
+slides.forEach(img=>img.style.opacity=0);
+slides[index].style.opacity=1;
+index=(index+1)%slides.length;
+setTimeout(startSlideshow,4000);
+}
+
+function openSong(){
+window.open("https://open.spotify.com/track/3ywjIbXWgG5Vjom6zhA2aP?si=pRDtn-dGQk-fgypQwk2qTQ","_blank");
+}
 </script>
 
 </body>
