@@ -7,135 +7,99 @@
 <style>
 body{
 margin:0;
-font-family:'Segoe UI',sans-serif;
-overflow:hidden;
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(to bottom,#000000,#2b0033);
 color:white;
 text-align:center;
+overflow-x:hidden;
 }
 
-/* Fullscreen slideshow */
-.slideshow{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-2;
-}
-
-.slideshow img{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-opacity:0;
-transition:opacity 2s ease-in-out;
-}
-
-/* Dark overlay */
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-z-index:-1;
-}
-
-/* Content */
-.content{
-position:relative;
-top:50%;
-transform:translateY(-50%);
-padding:20px;
-max-width:800px;
-margin:auto;
-}
-
-/* Title animation */
-.loveLine{
-font-size:42px;
-font-weight:bold;
-background: linear-gradient(90deg,#ff4da6,#ff99cc,#ff1a75,#ff4da6);
-background-size:300% auto;
-color:transparent;
--webkit-background-clip:text;
-animation:shine 4s linear infinite, heartbeat 1.5s infinite;
-}
-
-@keyframes shine{
-0%{background-position:0% center;}
-100%{background-position:300% center;}
-}
-
-@keyframes heartbeat{
-0%{transform:scale(1);}
-25%{transform:scale(1.05);}
-50%{transform:scale(1);}
-75%{transform:scale(1.05);}
-100%{transform:scale(1);}
-}
-
-/* Letter */
-.letter{
-margin-top:30px;
-font-size:18px;
-line-height:1.9;
-opacity:0;
-animation:fadeIn 4s forwards;
-animation-delay:2s;
-text-align:left;
-}
-
-@keyframes fadeIn{
-to{opacity:1;}
-}
-
-button{
-padding:12px 25px;
-border:none;
-border-radius:25px;
-background:#ff4da6;
-color:white;
-font-size:16px;
-cursor:pointer;
-margin-top:25px;
-}
-
-button:hover{
-background:#ff1a75;
-}
-
-/* Password screen */
-.passwordScreen{
-position:fixed;
-width:100%;
-height:100%;
-background:black;
+/* PASSWORD SCREEN */
+#passwordScreen{
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-z-index:10;
 }
 
 input{
 padding:12px;
-border-radius:20px;
+border-radius:25px;
 border:none;
-margin-top:10px;
+font-size:16px;
+margin-top:15px;
+text-align:center;
+}
+
+button{
+padding:12px 25px;
+border-radius:25px;
+border:none;
+margin-top:15px;
+background:#ff4da6;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff1a8c;
+}
+
+/* MAIN CONTENT */
+#mainContent{
+display:none;
+padding:30px 15px;
+}
+
+/* SLIDESHOW */
+.slideshow{
+position:relative;
+max-width:300px;
+margin:20px auto;
+}
+
+.slideshow img{
+width:100%;
+border-radius:20px;
+position:absolute;
+opacity:0;
+transition:opacity 1.5s ease-in-out;
+}
+
+/* LETTER */
+.letter{
+max-width:600px;
+margin:40px auto;
+line-height:1.8;
+font-size:17px;
+padding:0 10px;
+}
+
+.signature{
+margin-top:30px;
+font-size:20px;
+color:#ff99cc;
+font-weight:bold;
 }
 </style>
 </head>
 
 <body>
 
-<div class="passwordScreen" id="passwordScreen">
-<h2>Only Dan Can Enter ❤️</h2>
-<input type="password" id="pass" placeholder="Enter password">
-<button onclick="checkPass()">Unlock</button>
+<!-- PASSWORD SCREEN -->
+<div id="passwordScreen">
+<h2>For My Dan 💕</h2>
+<p>Enter our secret password</p>
+<input type="password" id="pass" placeholder="Password">
+<button onclick="checkPass()">Enter</button>
 </div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent">
+
+<h1>Suthisha loves Dan ❤️</h1>
 
 <div class="slideshow">
 <img src="20250804_112227.jpg">
@@ -150,99 +114,55 @@ margin-top:10px;
 <img src="Snapchat-1573426389.jpg">
 </div>
 
-<div class="overlay"></div>
-
-<div class="content" id="mainContent" style="display:none;">
-<h1 class="loveLine">Suthisha ❤️ Loves ❤️ Dan</h1>
-
 <div class="letter">
 
-<p><strong>To My Dan,</strong></p>
+To My Dan,
 
-<p>
-Sometimes I sit and think about how all of this started.
-How two people just met.
-And somehow, slowly,
-you became the most important person in my world.
-</p>
+Sometimes I sit quietly and think about how you became my whole world without even trying.
 
-<p>
-You didn’t enter my life loudly.
-You became part of it quietly.
-And before I even realised,
-I couldn’t imagine my days without you.
-</p>
+You didn’t enter my life like a storm.  
+You became part of it gently… slowly…  
+And before I realised it, you were my comfort.
 
-<p>
-You are the first person I want to tell everything to.
-The one I think about when something funny happens.
-The one I look for in a room.
-The one who makes even ordinary days feel special.
-</p>
+You are the first person I want to tell everything to.  
+The one I look for automatically.  
+The one whose presence makes everything feel calmer.
 
-<p>
-With you, love doesn’t feel dramatic.
-It feels safe.
-It feels steady.
+With you, love doesn’t feel dramatic.  
+It feels safe.  
+It feels steady.  
 It feels like home.
-</p>
 
-<p>
-Ooty wasn’t just a trip.
-It was us walking in cold air,
-laughing over nothing,
-sharing silence without it feeling empty.
-Those moments weren’t just memories —
-they became pieces of my heart.
-</p>
+Ooty wasn’t just a trip for me.  
+It was us walking together, laughing at nothing,  
+sharing silence without it ever feeling empty.
 
-<p>
-I don’t love you in a temporary way.
-I don’t love you for a season.
-I love you in the everyday way.
-The “let’s build something real” way.
-The “stay even when it’s hard” way.
-</p>
+I don’t love you for a moment.  
+I love you in the everyday way.  
+The “stay even when it’s hard” way.  
+The “build a future together” way.
 
-<p>
-You make me feel chosen.
-You make me feel valued.
-You make me feel understood in ways I didn’t know I needed.
-</p>
+I want you in the happy days.  
+In the boring days.  
+In the tired days.  
+In every version of life.
 
-<p>
-I don’t just want you in the happy moments.
-I want you in the boring days.
-In the long talks.
-In the quiet evenings.
-In the difficult conversations.
-In everything.
-</p>
-
-<p>
-And if life ever asks me again,
-who I would choose —
+If life ever asks me again who I choose…  
 I will still choose you.
-</p>
 
-<p>
-Not because I have to.
-But because I genuinely want to.
-</p>
+Not because I have to.  
+But because I want to.
 
-<p>
-You are not just someone I love.
-You are my peace.
-My comfort.
+You are not just someone I love.  
+You are my peace.  
+My comfort.  
 My person.
-</p>
 
-<p>
-And if forever is real,
+If forever exists…  
 I want it with you.
-</p>
 
-<p><strong>Always yours,<br>Suthisha ❤️</strong></p>
+Always yours,  
+Suthisha ❤️
 
 </div>
 
@@ -253,17 +173,18 @@ I want it with you.
 <script>
 
 function checkPass(){
-if(document.getElementById("pass").value==="kuttaaa"){
+var entered = document.getElementById("pass").value;
+if(entered === "kuttaa"){
 document.getElementById("passwordScreen").style.display="none";
 document.getElementById("mainContent").style.display="block";
 startSlideshow();
 }else{
-alert("Wrong password 😏");
+alert("Wrong password 😉");
 }
 }
 
-let slides=document.querySelectorAll(".slideshow img");
-let index=0;
+var slides=document.querySelectorAll(".slideshow img");
+var index=0;
 
 function startSlideshow(){
 slides.forEach(img=>img.style.opacity=0);
@@ -275,6 +196,7 @@ setTimeout(startSlideshow,4000);
 function openSong(){
 window.open("https://open.spotify.com/track/3ywjIbXWgG5Vjom6zhA2aP?si=pRDtn-dGQk-fgypQwk2qTQ","_blank");
 }
+
 </script>
 
 </body>
@@ -287,135 +209,99 @@ window.open("https://open.spotify.com/track/3ywjIbXWgG5Vjom6zhA2aP?si=pRDtn-dGQk
 <style>
 body{
 margin:0;
-font-family:'Segoe UI',sans-serif;
-overflow:hidden;
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(to bottom,#000000,#2b0033);
 color:white;
 text-align:center;
+overflow-x:hidden;
 }
 
-/* Fullscreen slideshow */
-.slideshow{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-2;
-}
-
-.slideshow img{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-opacity:0;
-transition:opacity 2s ease-in-out;
-}
-
-/* Dark overlay */
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-z-index:-1;
-}
-
-/* Content */
-.content{
-position:relative;
-top:50%;
-transform:translateY(-50%);
-padding:20px;
-max-width:800px;
-margin:auto;
-}
-
-/* Title animation */
-.loveLine{
-font-size:42px;
-font-weight:bold;
-background: linear-gradient(90deg,#ff4da6,#ff99cc,#ff1a75,#ff4da6);
-background-size:300% auto;
-color:transparent;
--webkit-background-clip:text;
-animation:shine 4s linear infinite, heartbeat 1.5s infinite;
-}
-
-@keyframes shine{
-0%{background-position:0% center;}
-100%{background-position:300% center;}
-}
-
-@keyframes heartbeat{
-0%{transform:scale(1);}
-25%{transform:scale(1.05);}
-50%{transform:scale(1);}
-75%{transform:scale(1.05);}
-100%{transform:scale(1);}
-}
-
-/* Letter */
-.letter{
-margin-top:30px;
-font-size:18px;
-line-height:1.9;
-opacity:0;
-animation:fadeIn 4s forwards;
-animation-delay:2s;
-text-align:left;
-}
-
-@keyframes fadeIn{
-to{opacity:1;}
-}
-
-button{
-padding:12px 25px;
-border:none;
-border-radius:25px;
-background:#ff4da6;
-color:white;
-font-size:16px;
-cursor:pointer;
-margin-top:25px;
-}
-
-button:hover{
-background:#ff1a75;
-}
-
-/* Password screen */
-.passwordScreen{
-position:fixed;
-width:100%;
-height:100%;
-background:black;
+/* PASSWORD SCREEN */
+#passwordScreen{
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-z-index:10;
 }
 
 input{
 padding:12px;
-border-radius:20px;
+border-radius:25px;
 border:none;
-margin-top:10px;
+font-size:16px;
+margin-top:15px;
+text-align:center;
+}
+
+button{
+padding:12px 25px;
+border-radius:25px;
+border:none;
+margin-top:15px;
+background:#ff4da6;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff1a8c;
+}
+
+/* MAIN CONTENT */
+#mainContent{
+display:none;
+padding:30px 15px;
+}
+
+/* SLIDESHOW */
+.slideshow{
+position:relative;
+max-width:300px;
+margin:20px auto;
+}
+
+.slideshow img{
+width:100%;
+border-radius:20px;
+position:absolute;
+opacity:0;
+transition:opacity 1.5s ease-in-out;
+}
+
+/* LETTER */
+.letter{
+max-width:600px;
+margin:40px auto;
+line-height:1.8;
+font-size:17px;
+padding:0 10px;
+}
+
+.signature{
+margin-top:30px;
+font-size:20px;
+color:#ff99cc;
+font-weight:bold;
 }
 </style>
 </head>
 
 <body>
 
-<div class="passwordScreen" id="passwordScreen">
-<h2>Only Dan Can Enter ❤️</h2>
-<input type="password" id="pass" placeholder="Enter password">
-<button onclick="checkPass()">Unlock</button>
+<!-- PASSWORD SCREEN -->
+<div id="passwordScreen">
+<h2>For My Dan 💕</h2>
+<p>Enter our secret password</p>
+<input type="password" id="pass" placeholder="Password">
+<button onclick="checkPass()">Enter</button>
 </div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent">
+
+<h1>Suthisha loves Dan ❤️</h1>
 
 <div class="slideshow">
 <img src="20250804_112227.jpg">
@@ -430,99 +316,55 @@ margin-top:10px;
 <img src="Snapchat-1573426389.jpg">
 </div>
 
-<div class="overlay"></div>
-
-<div class="content" id="mainContent" style="display:none;">
-<h1 class="loveLine">Suthisha ❤️ Loves ❤️ Dan</h1>
-
 <div class="letter">
 
-<p><strong>To My Dan,</strong></p>
+To My Dan,
 
-<p>
-Sometimes I sit and think about how all of this started.
-How two people just met.
-And somehow, slowly,
-you became the most important person in my world.
-</p>
+Sometimes I sit quietly and think about how you became my whole world without even trying.
 
-<p>
-You didn’t enter my life loudly.
-You became part of it quietly.
-And before I even realised,
-I couldn’t imagine my days without you.
-</p>
+You didn’t enter my life like a storm.  
+You became part of it gently… slowly…  
+And before I realised it, you were my comfort.
 
-<p>
-You are the first person I want to tell everything to.
-The one I think about when something funny happens.
-The one I look for in a room.
-The one who makes even ordinary days feel special.
-</p>
+You are the first person I want to tell everything to.  
+The one I look for automatically.  
+The one whose presence makes everything feel calmer.
 
-<p>
-With you, love doesn’t feel dramatic.
-It feels safe.
-It feels steady.
+With you, love doesn’t feel dramatic.  
+It feels safe.  
+It feels steady.  
 It feels like home.
-</p>
 
-<p>
-Ooty wasn’t just a trip.
-It was us walking in cold air,
-laughing over nothing,
-sharing silence without it feeling empty.
-Those moments weren’t just memories —
-they became pieces of my heart.
-</p>
+Ooty wasn’t just a trip for me.  
+It was us walking together, laughing at nothing,  
+sharing silence without it ever feeling empty.
 
-<p>
-I don’t love you in a temporary way.
-I don’t love you for a season.
-I love you in the everyday way.
-The “let’s build something real” way.
-The “stay even when it’s hard” way.
-</p>
+I don’t love you for a moment.  
+I love you in the everyday way.  
+The “stay even when it’s hard” way.  
+The “build a future together” way.
 
-<p>
-You make me feel chosen.
-You make me feel valued.
-You make me feel understood in ways I didn’t know I needed.
-</p>
+I want you in the happy days.  
+In the boring days.  
+In the tired days.  
+In every version of life.
 
-<p>
-I don’t just want you in the happy moments.
-I want you in the boring days.
-In the long talks.
-In the quiet evenings.
-In the difficult conversations.
-In everything.
-</p>
-
-<p>
-And if life ever asks me again,
-who I would choose —
+If life ever asks me again who I choose…  
 I will still choose you.
-</p>
 
-<p>
-Not because I have to.
-But because I genuinely want to.
-</p>
+Not because I have to.  
+But because I want to.
 
-<p>
-You are not just someone I love.
-You are my peace.
-My comfort.
+You are not just someone I love.  
+You are my peace.  
+My comfort.  
 My person.
-</p>
 
-<p>
-And if forever is real,
+If forever exists…  
 I want it with you.
-</p>
 
-<p><strong>Always yours,<br>Suthisha ❤️</strong></p>
+Always yours,  
+Suthisha ❤️
 
 </div>
 
@@ -533,17 +375,18 @@ I want it with you.
 <script>
 
 function checkPass(){
-if(document.getElementById("pass").value==="kuttaaa"){
+var entered = document.getElementById("pass").value;
+if(entered === "kuttaa"){
 document.getElementById("passwordScreen").style.display="none";
 document.getElementById("mainContent").style.display="block";
 startSlideshow();
 }else{
-alert("Wrong password 😏");
+alert("Wrong password 😉");
 }
 }
 
-let slides=document.querySelectorAll(".slideshow img");
-let index=0;
+var slides=document.querySelectorAll(".slideshow img");
+var index=0;
 
 function startSlideshow(){
 slides.forEach(img=>img.style.opacity=0);
@@ -555,6 +398,7 @@ setTimeout(startSlideshow,4000);
 function openSong(){
 window.open("https://open.spotify.com/track/3ywjIbXWgG5Vjom6zhA2aP?si=pRDtn-dGQk-fgypQwk2qTQ","_blank");
 }
+
 </script>
 
 </body>
